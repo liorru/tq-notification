@@ -1,28 +1,34 @@
-Logger-service
+Tq-notification
 =========
 
 ## Installation
 
-  npm install notify-lib --save
+  npm install tq-notification --save
 
 ## Usage
 ```
-var logger = require("config/logger")({
-  remote: {
-    type: 'powerball',
-    host: '192.168.64.2',
-    port: '8080'
-  },
-  local: {
-    logPath : config.logPath,
-    filename: '/all-logs.log'
+var tq = require('tq-notification');
+tq.init('localhost:3002', function(error, result) {
+  if (error) {
+    console.log(error)
+    return
   }
-});
+  console.log("> init done: ", result);
 
-logger.info('Express server listening on port 3000'; 
+  var msg = {
+    request_id: 12345,
+    transport: 'email',
+    message: {
+      to: 'client@gmail.com',
+      subject: 'test',
+      body: "Hello my Dear",
+      attachment: "ATTACHMENT"
+    }
+  };
 
-// Like http listener using morgan
+  tq.send(msg).then(function() {
+    console.log("> the message was sent")
+  })
 
-var app = express();
-app.use(logger.httpListener);
+})
 ```
