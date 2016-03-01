@@ -1,0 +1,27 @@
+{
+  "name": "tq-notification",
+  "version": "1.0.2",
+  "description": "Library to interact with Notification service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liorru/tq-notification.git"
+  },
+  "keywords": [
+    "tq-notification"
+  ],
+  "author": "Vadim C <vadim.inc@gmail.com> (-)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liorru/tq-notification/issues"
+  },
+  "homepage": "https://github.com/liorru/tq-notification#readme",
+  "dependencies": {
+    "amqplib": "^0.4.1",
+    "bluebird": "^3.2.1",
+    "request": "^2.69.0"
+  }
+}
